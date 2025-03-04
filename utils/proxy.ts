@@ -1,11 +1,11 @@
 import { getFlagEmoji } from "./string";
 
 const vlessTemplate =
-  "vless://fc60147e-76b8-4bc5-b691-90b2da79e3d2@172.67.73.39:443?encryption=none&type=ws&host=nautica.foolvpn.me&security=tls&sni=nautica.foolvpn.me&path=%2F172.232.239.151-587#1%20%F0%9F%87%AE%F0%9F%87%A9%20Akamai%20Connected%20Cloud%20WS%20TLS%20[nautica]";
+  "vless://fc60147e-76b8-4bc5-b691-90b2da79e3d2@172.67.73.39:443?encryption=none&type=ws&host=vipren.biz.id&security=tls&sni=vipren.biz.id&path=%2F172.232.239.151-587#1%20%F0%9F%87%AE%F0%9F%87%A9%20Akamai%20Connected%20Cloud%20WS%20TLS%20[vipren]";
 const trojanTemplate =
-  "trojan://86768774-70b2-4c15-80c3-02066fb1e3b6@172.67.73.39:443?encryption=none&type=ws&host=nautica.foolvpn.me&security=tls&sni=nautica.foolvpn.me&path=%2F35.219.50.99-443#1%20%F0%9F%87%AE%F0%9F%87%A9%20Google%20Cloud%20WS%20TLS%20[nautica]";
+  "trojan://86768774-70b2-4c15-80c3-02066fb1e3b6@172.67.73.39:443?encryption=none&type=ws&host=vipren.biz.id&security=tls&sni=vipren.biz.id&path=%2F35.219.50.99-443#1%20%F0%9F%87%AE%F0%9F%87%A9%20Google%20Cloud%20WS%20TLS%20[vipren]";
 const ssTemplate =
-  "ss://bm9uZTpkMDIzMmM1NS1kZjE0LTRjMzMtYTMxOS1jNGM1NTVmMmIwZjQ%3D@172.67.73.39:443?encryption=none&type=ws&host=nautica.foolvpn.me&plugin=v2ray-plugin%3Btls%3Bmux%3D0%3Bmode%3Dwebsocket%3Bpath%3D%2F43.218.77.16-1443%3Bhost%3Dnautica.foolvpn.me&security=tls&sni=nautica.foolvpn.me&path=%2F43.218.77.16-1443#1%20%F0%9F%87%AE%F0%9F%87%A9%20Amazon.com%20WS%20TLS%20[nautica]";
+  "ss://bm9uZTpkMDIzMmM1NS1kZjE0LTRjMzMtYTMxOS1jNGM1NTVmMmIwZjQ%3D@172.67.73.39:443?encryption=none&type=ws&host=vipren.biz.id&plugin=v2ray-plugin%3Btls%3Bmux%3D0%3Bmode%3Dwebsocket%3Bpath%3D%2F43.218.77.16-1443%3Bhost%3Dvipren.biz.id&security=tls&sni=vipren.biz.id&path=%2F43.218.77.16-1443#1%20%F0%9F%87%AE%F0%9F%87%A9%20Amazon.com%20WS%20TLS%20[vipren]";
 
 type proxyType = {
   ip: string;
