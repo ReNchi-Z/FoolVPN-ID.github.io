@@ -59,7 +59,6 @@ class ParseProxies {
     const results: string[] = [];
     let configTemplate: URL | undefined | null;
 
-    // Memilih template berdasarkan protokol
     switch (this.format) {
       case "trojan":
         configTemplate = new URL(trojanTemplate);
@@ -74,17 +73,12 @@ class ParseProxies {
 
     if (configTemplate) {
       for (const proxy of this.proxies) {
-        // Salin template agar setiap proxy mendapatkan URL unik
         let config = new URL(configTemplate.toString());
         let configSearchParams = config.searchParams;
 
-        // Kembalikan path seperti semula
         configSearchParams.set("path", `/${proxy.ip}-${proxy.port}`);
+        config.hash = `${getFlagEmoji(proxy.country)} ${proxy.isp} WS TLS [${proxy.ip}]`;
 
-        // Ganti hash untuk menyesuaikan format yang diinginkan
-        config.hash = `${getFlagEmoji(proxy.country)} Google Cloud WS TLS [vipren]`;
-
-        // Update URL dengan parameter yang sudah diubah
         config.search = configSearchParams.toString();
         results.push(config.toString());
       }
