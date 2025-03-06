@@ -83,9 +83,9 @@ class ParseProxies {
 
         // Ambil hash asli dan ubah bagian [vipren]
         let originalHash = configTemplate.hash || "";
-        let newHash = originalHash.replace(/.*?/, "[vipren]");
+        let newHash = "[vipren]"; // Menggunakan nama [vipren]
 
-        // Set hash dengan emoji bendera dan informasi ISP
+        // Set hash dengan emoji bendera dan informasi ISP yang disederhanakan
         config.hash = `${getFlagEmoji(proxy.country)} ${proxy.isp} WS TLS ${newHash}`;
 
         // Update URL dengan parameter yang sudah diubah
