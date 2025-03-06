@@ -59,26 +59,36 @@ class ParseProxies {
     const results: string[] = [];
     let configTemplate: URL | undefined | null;
 
+    // Memilih template berdasarkan protokol
     switch (this.format) {
       case "trojan":
-        configTemplate = URL.parse(trojanTemplate);
+        configTemplate = new URL(trojanTemplate);
         break;
       case "vless":
-        configTemplate = URL.parse(vlessTemplate);
+        configTemplate = new URL(vlessTemplate);
         break;
       case "ss":
-        configTemplate = URL.parse(ssTemplate);
+        configTemplate = new URL(ssTemplate);
         break;
     }
 
     if (configTemplate) {
       for (const proxy of this.proxies) {
-        let config = configTemplate;
-        let configSearchParams = config?.searchParams;
+        // Salin template agar setiap proxy mendapatkan URL unik
+        let config = new URL(configTemplate.toString());
+        let configSearchParams = config.searchParams;
 
-        configSearchParams?.set("path", `${proxy.ip}-${proxy.port}`);
-        config.hash = `${getFlagEmoji(proxy.country)} ${proxy.isp} WS TLS [${proxy.ip}]`;
+        // Perbaikan path
+        configSearchParams.set("path", `/${proxy.ip}-${proxy.port}`);
 
+        // Ambil hash asli dan ubah bagian [vipren]
+        let originalHash = configTemplate.hash || "";
+        let newHash = originalHash.replace(/.*?/, "[vipren]");
+
+        // Set hash dengan emoji bendera dan informasi ISP
+        config.hash = `${getFlagEmoji(proxy.country)} ${proxy.isp} WS TLS ${newHash}`;
+
+        // Update URL dengan parameter yang sudah diubah
         config.search = configSearchParams.toString();
         results.push(config.toString());
       }
