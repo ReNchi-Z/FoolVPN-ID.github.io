@@ -81,12 +81,8 @@ class ParseProxies {
         // Perbaikan path
         configSearchParams.set("path", `/${proxy.ip}-${proxy.port}`);
 
-        // Ambil hash asli dan ubah bagian [vipren]
-        let originalHash = configTemplate.hash || "";
-        let newHash = "[vipren]"; // Menggunakan nama [vipren]
-
-        // Set hash dengan emoji bendera dan informasi ISP yang disederhanakan
-        config.hash = `${getFlagEmoji(proxy.country)} ${proxy.isp} WS TLS ${newHash}`;
+        // Ganti hash untuk menyesuaikan format yang diinginkan
+        config.hash = `${getFlagEmoji(proxy.country)} Google Cloud WS TLS [vipren]`;
 
         // Update URL dengan parameter yang sudah diubah
         config.search = configSearchParams.toString();
