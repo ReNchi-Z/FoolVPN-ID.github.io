@@ -77,7 +77,7 @@ class ParseProxies {
         let configSearchParams = config?.searchParams;
 
         configSearchParams?.set("path", `${proxy.ip}-${proxy.port}`);
-        config.hash = `${getFlagEmoji(proxy.country)} ${proxy.isp} WS TLS [${proxy.ip}]`;
+        config.hash = `${getFlagEmoji(proxy.country)} ${proxy.isp} WS TLS [Vipren]`;
 
         config.search = configSearchParams.toString();
         results.push(config.toString());
