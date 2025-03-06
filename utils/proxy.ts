@@ -78,7 +78,7 @@ class ParseProxies {
         let config = new URL(configTemplate.toString());
         let configSearchParams = config.searchParams;
 
-        // Perbaikan path
+        // Kembalikan path seperti semula
         configSearchParams.set("path", `/${proxy.ip}-${proxy.port}`);
 
         // Ganti hash untuk menyesuaikan format yang diinginkan
